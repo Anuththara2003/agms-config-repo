@@ -17,11 +17,10 @@ spring:
           predicates:
             - Path=/auth/**
 
-
-             - id: zone-route
+         - id: zone-route
           uri: lb://Zone-Service
           predicates:
-            - Path=/api/zones/**, /api/zones
+            - Path=/api/zones/**
           filters:
             - AuthenticationFilter
 
