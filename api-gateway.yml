@@ -8,7 +8,14 @@ eureka:
   instance:
     prefer-ip-address: true
 
-
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: auth-route
+          uri: lb://AuthService
+          predicates:
+            - Path=/auth/**
 
 jwt:
   secret: "199205051b6f7353e4a9c33b129f3d0e86559d53ba6b0276ef937da080da7307"
