@@ -8,8 +8,21 @@ eureka:
   instance:
     prefer-ip-address: true
 
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000 
+        readTimeout: 5000    
+        loggerLevel: full
+
+
 external:
   iot:
     base-url: "http://104.211.95.241:8080/api"
     username: "sensor_sandaru_1"
     password: "123456"
+
+automation:
+  service:
+    url: "http://automation-service/api/automation/process"
